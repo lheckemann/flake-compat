@@ -156,7 +156,7 @@ let
               if key == lockFile.root
               then rootSrc
               else
-                if rootOverrides.${key} != null then
+                if (rootOverrides.${key} or null) != null then
                   { type = "path";
                     outPath = rootOverrides.${key};
                     narHash = throw "narHash unimplemented for impureOverride";
